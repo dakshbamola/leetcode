@@ -1,0 +1,15 @@
+class Solution {
+public:
+    bool uniqueOccurrences(vector<int>& arr) {
+        unordered_map<int,int> map;
+        for(int i: arr){
+            map[i]++;
+        }
+        set<int> val;
+        for(auto i:map){
+            if(!val.insert(i.second).second)
+                return false;
+        }
+        return true;
+    }
+};
